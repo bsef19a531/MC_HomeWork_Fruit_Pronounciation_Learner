@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         CustomListAdapter listAdapter = new CustomListAdapter(this, fruitName, fruitImage);
-        fruitList = (ListView) findViewById(R.id.customlistview);
+        fruitList = (ListView) findViewById(R.id.myListView);
         fruitList.setAdapter(listAdapter);
     }
 }

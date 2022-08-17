@@ -28,7 +28,7 @@ public class CustomListAdapter extends ArrayAdapter {
 
         LayoutInflater inflater = ctx.getLayoutInflater();
 
-        View v = inflater.inflate(R.layout.activity_custom_list_view, null, true);
+        View v = inflater.inflate(R.layout.activity_custom_list_view, viewGroup, true);
 
         TextView txtView = (TextView) v.findViewById(R.id.textView);
         ImageView imgView = (ImageView) v.findViewById(R.id.imageIcon);
