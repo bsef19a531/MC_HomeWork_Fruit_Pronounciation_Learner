@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 //        ArrayList<ListItem> lst = new ArrayList<>();
 
 //        lst.add(new ListItem("Apple", R.drawable.apple));
-        lst.add(new ListItem("Banana", R.drawable.ic_launcher_background));
+        lst.add(new ListItem("Banana", R.drawable.banana));
 
         CustomizedListAdapter customAdapter = new CustomizedListAdapter(this, lst);
 
