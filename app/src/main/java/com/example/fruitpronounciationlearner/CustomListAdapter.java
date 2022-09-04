@@ -34,7 +34,5 @@ public class CustomListAdapter extends ArrayAdapter {
 //        ImageView imgView = (ImageView) v.findViewById(R.id.imageIcon);
         txtView.setText(Names[i]);
 //        imgView.setImageResource(Images[i]);
-        return v;
-
-    }
+        return v;   }
 }

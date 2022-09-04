@@ -5,8 +5,8 @@ public class ListItem {
     private  int Image;
 
     public ListItem(String name, int image) {
-        Name = name;
-        Image = image;
+        this.Name = name;
+        this.Image = image;
     }
 
     public String getName() {
@@ -22,6 +22,6 @@ public class ListItem {
     }
 
     public void setImage(int image) {
-        Image = image;
+        this.Image = image;
     }
 }

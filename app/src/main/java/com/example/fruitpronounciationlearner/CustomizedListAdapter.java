@@ -1,5 +1,6 @@
 package com.example.fruitpronounciationlearner;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,25 +9,29 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 
 public class CustomizedListAdapter extends ArrayAdapter<ListItem> {
-    public CustomizedListAdapter(Context ctx, ArrayList<ListItem> lst)
+    ArrayList<ListItem> lst;
+    public CustomizedListAdapter(@NonNull Context ctx, int resource, ArrayList<ListItem> lst)
     {
-        super(ctx,R.layout.activity_custom_list_view, lst);
+        super(ctx,resource, lst );
+        this.lst = lst;
     }
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        ListItem listitem = getItem(i);
+        ListItem listitem = lst.get(0);
 
-            view = LayoutInflater.from(getContext()).inflate(R.layout.activity_custom_list_view, viewGroup, true);
+        View v = LayoutInflater.from(getContext()).inflate(R.layout.activity_custom_list_view, null, true);
 
-        TextView txtView = (TextView) view.findViewById(R.id.textView);
-        ImageView imgView = (ImageView) view.findViewById(R.id.imageIcon);
+        TextView txtView =  v.findViewById(R.id.textView);
+        ImageView imgView =  v.findViewById(R.id.imageIcon);
         txtView.setText(listitem.getName());
         imgView.setImageResource(listitem.getImage());
 
-        return view;
+        return v;
     }
 }
