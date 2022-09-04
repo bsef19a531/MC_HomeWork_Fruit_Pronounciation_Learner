@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 //import android.widget.LinearLayout;
 import android.util.Log;
@@ -18,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     String[] fruitName = {"Apple", "Apricot", "Banana", "Guava", "Mango", "Orange", "Pineapple", "Pomegranate"};
     int [] fruitImage = {R.drawable.apple,R.drawable.apricot, R.drawable.banana, R.drawable.guava, R.drawable.mango, R.drawable.orange, R.drawable.pineapple, R.drawable.pomegranate};
     ListView fruitList;
+
+    int [] fruitAudio = {R.raw.apple_en_gb_1, R.raw.apricot_en_gb_1, R.raw.banana_en_gb_1, R.raw.guava_en_gb_1, R.raw.mango_en_gb_1, R.raw.orange_en_gb_1, R.raw.pineapple_en_gb_1, R.raw.pomegranate_en_gb_1};
 
 
     @Override
@@ -40,10 +43,13 @@ public class MainActivity extends AppCompatActivity {
         fruitList = findViewById(R.id.myListView);
         fruitList.setAdapter(customAdapter);
 
+
+
         fruitList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+                final MediaPlayer audio = MediaPlayer.create(MainActivity.this, fruitAudio[i]);
+                audio.start();
             }
         });
 
