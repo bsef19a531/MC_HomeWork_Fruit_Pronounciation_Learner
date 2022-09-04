@@ -23,7 +23,7 @@ public class CustomizedListAdapter extends ArrayAdapter<ListItem> {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        ListItem listitem = lst.get(0);
+        ListItem listitem = lst.get(i);
 
         View v = LayoutInflater.from(getContext()).inflate(R.layout.activity_custom_list_view, null, true);
 

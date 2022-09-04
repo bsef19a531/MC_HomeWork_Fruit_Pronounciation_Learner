@@ -26,12 +26,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ArrayList<ListItem> lst = new ArrayList<>();
-        ListItem li;
-        for(int i = 0; i < fruitName.length; i++)
-        {
-            li = new ListItem(fruitName[i], fruitImage[i]);
-            lst.add(li);
-        }
+       lst.add(new ListItem(fruitName[0], fruitImage[0]));
+        lst.add(new ListItem(fruitName[1], fruitImage[1]));
+        lst.add(new ListItem(fruitName[2], fruitImage[2]));
+        lst.add(new ListItem(fruitName[3], fruitImage[3]));
+        lst.add(new ListItem(fruitName[4], fruitImage[4]));
+        lst.add(new ListItem(fruitName[5], fruitImage[5]));
+        lst.add(new ListItem(fruitName[6], fruitImage[6]));
+        lst.add(new ListItem(fruitName[7], fruitImage[7]));
 
         CustomizedListAdapter customAdapter = new CustomizedListAdapter(this, R.layout.activity_custom_list_view ,lst);
 
